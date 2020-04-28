@@ -1,6 +1,8 @@
 import React from "react";
+import { connect } from "react-redux";
 
-function App() {
+function App(props) {
+  console.log(props);
   return (
     <div>
       <p>Hello world</p>
@@ -8,4 +10,11 @@ function App() {
   );
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    users: state.users,
+    recipes: state.recipes
+  };
+}
+
+export default connect(mapStateToProps)(App);
