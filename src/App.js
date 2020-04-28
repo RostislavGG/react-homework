@@ -1,20 +1,21 @@
 import React from "react";
-import { connect } from "react-redux";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Login } from "./Components/Login";
+import { Register } from "./Components/Register";
 
-function App(props) {
-  console.log(props);
+const App = props => {
   return (
-    <div>
-      <p>Hello world</p>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/register">
+          <Register />
+        </Route>
+      </Switch>
+    </Router>
   );
-}
+};
 
-function mapStateToProps(state) {
-  return {
-    users: state.users,
-    recipes: state.recipes
-  };
-}
-
-export default connect(mapStateToProps)(App);
+export default App;
