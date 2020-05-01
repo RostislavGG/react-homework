@@ -5,16 +5,16 @@ export enum Gender {
 }
 
 export interface User {
-  id: number;
+  id: string;
   name: string;
   loginName: string;
   password: string;
   gender: Gender;
   isAdmin: boolean;
-  profilePic: string;
-  description: string;
+  profilePic?: string;
+  description?: string;
   registerDate: Date;
-  lastChangeDate: Date;
+  lastChangeDate?: Date;
 }
 
 export interface Recipe {
